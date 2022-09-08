@@ -18,3 +18,5 @@ def hw2():
         print("C1 is valid")
     else:
         print("Here's a counter example ", s.model())
+        
+hw2()
