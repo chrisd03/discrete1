@@ -37,3 +37,4 @@ A crime has been committed. The police have 5 suspects at least one of whom is g
 - if Heath is guilty, then Mullaney is guilty.
 - Chase and Heath are not both guilty.
 - Unless Heath is guilty, Decker is innocent.
+  
