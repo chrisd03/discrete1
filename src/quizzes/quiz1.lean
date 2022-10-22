@@ -18,9 +18,9 @@ there is no such valid inference rule.
 
 If a ball, b, is round *and* b is also red, is b red?
 
-A: yes/no: 
+A: yes/no: yes
 
-B: Why? 
+B: Why? By AND elimination right, X AND Y implies Y
 
 
 #1B
@@ -29,59 +29,59 @@ If flowers make you happy and chocolates make you happy,
 and I give you flowers *or* I give you chocolates, will
 you be happy?
 
-A: yes/no: 
+A: yes/no: yes
 
-B: Why?
+B: Why? By the rule of OR elimination
 
 
 #1C: If giraffes are just zebras in disguise, then the 
 moon is made of green cheese?
 
-A. yes/: 
+A. yes/: yes
 
-B. Why?
+B. Why? False implies false is true (not an inference rule but a rule of implication)
 
 
 #1D. If x = y implies that 0 = 1, then is it true that
 x ≠ y?
 
-A. yes/no: 
+A. yes/no: yes
 
-B. Why?
+B. Why? If P implies false then it is equal to Not(P)
 
 
 
 #1E. If every zebra has stripes and Zoe is a Zebra then
 Zoe has stripes.
 
-A. yes/no: 
+A. yes/no: yes
 
-B. Why?
+B. Why? rule of arrow elimination. Zebra implies stripes, Zoe is a Zebra, therefore stripes
 
 
 #1F. If Z could be *any* Zebra and Z has stripes, then 
 *every* Zebra has stripes.
 
-A. Yes/no: 
+A. Yes/no: yes
 
-B: Why?
+B: Why? The "for any" means Z is an arbitrary Zebra so yes all Zebras have stripes
 
 
 #1G. If whenever the wind blows, the leaves move, and 
 the leaves are moving, then the wind is blowing.
 
-A. yes/no: 
+A. yes/no: no
 
-B. Why? 
+B. Why? Fallacious: affirming the conclusion. False can imply true
 
 
 #1H: If Gina is nice *or* Gina is tall, and Gina is nice,
 then Gina is not tall. (The "or" here is understood to be
 the or of predicate logic.)
 
-A. yes/no: 
+A. yes/no: no
 
-B. Why?
+B. Why? Fallacious: Affirming the disjunct. Just because one side of the OR is true doesn't mean the other is false
 -/
 
 
@@ -94,10 +94,11 @@ logic: X ∨ ¬Y.
 
 #2A: Is is satisfiable? If so, give a model (a binding of 
 the variables to values that makes the expressions true).
-
+X: True
+Y: False
 
 #2B: Is it valid? Explain your answer. 
-
+No, if X is False and Y is true then the proposition would be false
 
 -/
 
@@ -113,7 +114,8 @@ true if and only if Q is true) then if P is true then Q is
 true.
 -/
 
-#check _
+#check ∀(P Q: Prop), P ↔ Q
+
 
 
 
@@ -128,7 +130,9 @@ be ignored here.
 #check ∀ (n m : ℕ), n < m → m - n > 0
 
 /-
-Answer:
+Answer: If n and m are any natural numbers, 
+        if n is less than m
+        then m - n > 0
 -/
 
 -- B
@@ -136,7 +140,8 @@ Answer:
 #check ∃ (n : ℕ), ∀ (m : nat), m >= n
 
 /-
-Answer:
+Answer: There is some natural number, n, that for all       natural numbers, m, 
+m is greater than or equal to
 -/
 
 
@@ -146,7 +151,8 @@ variables (isEven: ℕ → Prop) (isOdd: ℕ → Prop)
 #check ∀ (n : ℕ), isEven n ∨ isOdd n
 
 /-
-Answer:
+Answer: For any natural number n,
+n is even or n is odd
 -/
 
 
@@ -155,7 +161,7 @@ Answer:
 #check ∀ (P : Prop), P ∨ ¬P
 
 /-
-Answer:
+Answer: For every proposition P, P is either true or false
 -/
 
 
@@ -164,7 +170,7 @@ Answer:
 #check ∀ (P : Prop), ¬(P ∧ ¬P)
 
 /-
-Answer:
+Answer: For every proposition P, P cannot be both true and false
 -/
 
 

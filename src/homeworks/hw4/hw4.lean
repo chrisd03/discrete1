@@ -13,7 +13,7 @@ answer.
 -/
 
 def and_associative : Prop := 
-  _
+  ∀ (P Q R: Prop), P ∧ (Q ∧ R) ↔ (P ∧ Q) ∧ R
 
 
 /- #1B [10 points]

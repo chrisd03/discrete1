@@ -69,12 +69,10 @@ of proof script, using either assume or intros
 example : ∀ (n m : ℕ), n + m = 0 :=
 begin
   intros n m,
-  _
 end
 
 -- using assume
 example : ∀ (n m : ℕ), n + m = 0 :=
 begin
   assume n m,
-  _
 end
