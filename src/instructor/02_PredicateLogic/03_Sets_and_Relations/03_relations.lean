@@ -63,9 +63,43 @@ negation relation.
 example: ∀ (b1 b2), negation b1 b2 ↔ bnot b1 = b2 :=
 begin
 assume b1 b2,
-split,
--- What should be our proof strategy from here?
--- Exercise: complete this proof.
+split,  --like applying if.intro
+--Forward direction
+intro h,
+
+cases b1 with b1tt b1ff,
+cases b2 with b2tt b2ff,
+cases h,
+
+--ff, ff
+cases h,
+
+
+--tt, ff
+exact rfl,
+
+cases b2,
+
+--tt, ff
+exact rfl,
+
+--tt, tt
+cases h,
+
+--Backwards direction
+
+assume h, --prove by case analysis on b1 and b2
+
+cases b1, 
+cases b2,
+
+cases h,
+unfold negation,
+
+
+cases b2,
+unfold negation,
+cases h,
 end 
 
 
@@ -137,3 +171,9 @@ example : squares 2 4 := rfl
 example : squares 25 625 := rfl
 
 
+def string2len : string → nat → Prop := λ s n, s.length = n
+example : string2len "Lean!" 5 :=
+begin
+  unfold string2len,
+  exact rfl,
+end
